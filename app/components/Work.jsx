@@ -2,8 +2,12 @@ import React from "react";
 import { assets, workData } from "@/assets/assets";
 import Image from "next/image";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { useDarkMode } from "../context/DarkModeContext";
 
-const Work = ({ isDarkMode }) => {
+const Work = () => {
+  const { isDarkMode, setIsdarkMode } = useDarkMode();
+
   const workList = workData.map(({ title, description, bgImage }, index) => {
     return (
       <motion.div
@@ -67,11 +71,8 @@ const Work = ({ isDarkMode }) => {
       >
         {workList}
       </motion.div>
-      <motion.a
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.1 }}
-        href="#"
+      <Link
+        href={{ pathname: "/websits", query: { isDarkMode: isDarkMode } }}
         className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
       >
         Show More{" "}
@@ -82,7 +83,7 @@ const Work = ({ isDarkMode }) => {
           }
           className="w-4"
         />
-      </motion.a>
+      </Link>
     </motion.div>
   );
 };

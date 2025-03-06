@@ -3,8 +3,9 @@ import { assets, infoList, toolsData } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
-
-const About = ({ isDarkMode }) => {
+import { useDarkMode } from "../context/DarkModeContext";
+const About = () => {
+  const { isDarkMode, setIsdarkMode } = useDarkMode();
   const liList = infoList.map(
     ({ icon, iconDark, title, description }, index) => {
       return (

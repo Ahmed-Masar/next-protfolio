@@ -6,13 +6,6 @@ import { motion } from "motion/react";
 const Header = () => {
   return (
     <div className=" w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-1">
-      {/* <div>
-        <Image
-          src={assets.profile_img}
-          alt="ahmed"
-          className=" rounded-full w-32"
-        />
-      </div> */}
       <motion.h3
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -50,7 +43,7 @@ const Header = () => {
           Contact Me{" "}
           <Image src={assets.right_arrow_white} alt="" className="w-4" />
         </motion.a>
-        <motion.a
+        {/* <motion.a
           href="/sample-resume.pdf"
           download
           initial={{ y: 30, opacity: 0 }}
@@ -60,7 +53,7 @@ const Header = () => {
         >
           {" "}
           My Resume <Image src={assets.download_icon} alt="" className="w-4" />
-        </motion.a>
+        </motion.a> */}
       </div>
     </div>
   );

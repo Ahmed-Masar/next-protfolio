@@ -1,8 +1,11 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
-const Navbar = ({ isDarkMode, setIsdarkMode }) => {
+const Navbar = () => {
+  const { isDarkMode, setIsdarkMode } = useDarkMode();
+
   const sideMeun = useRef();
 
   const [isScroll, setScroll] = useState(false);
@@ -68,11 +71,11 @@ const Navbar = ({ isDarkMode, setIsdarkMode }) => {
               Services
             </a>
           </li> */}
-          <li>
+          {/* <li>
             <a href="#work" className=" font-Ovo">
               My Work
             </a>
-          </li>
+          </li> */}
           <li>
             <a href="#contact" className=" font-Ovo">
               Contact Me
@@ -138,11 +141,11 @@ const Navbar = ({ isDarkMode, setIsdarkMode }) => {
               Services
             </a>
           </li> */}
-          <li>
+          {/* <li>
             <a onClick={closeMeun} href="#work" className=" font-Ovo">
               My Work
             </a>
-          </li>
+          </li> */}
           <li>
             <a onClick={closeMeun} href="#contact" className=" font-Ovo">
               Contact Me

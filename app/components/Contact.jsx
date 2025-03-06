@@ -89,7 +89,7 @@ const Contact = () => {
             className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
           />
         </div>
-        <textarea
+        <motion.textarea
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.3 }}
